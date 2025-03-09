@@ -1,70 +1,127 @@
-<!DOCTYPE html> <!-- Menentukan bahwa dokumen ini adalah dokumen HTML5 -->
-<html lang="id"> <!-- Elemen utama yang membungkus seluruh halaman, dengan atribut bahasa "id" untuk Bahasa Indonesia -->
-<head> <!-- Bagian kepala dokumen, berisi metadata dan pengaturan dokumen -->
-    <!-- Meta data basic -->
-    <meta charset="UTF-8"> <!-- Menentukan karakter encoding sebagai UTF-8 untuk mendukung berbagai karakter -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Mengatur tampilan agar responsif di perangkat mobile -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Kompatibilitas dengan Internet Explorer -->
-    <!-- Meta data SEO -->
-    <meta name="description" content="Deskripsi singkat halaman ini">
-    <meta name="keywords" content="kata kunci, yang, relevan">
-    <meta name="author" content="Nama Penulis">
-    <meta name="robots" content="index, follow">
-        
-    <title>Contoh HTML Semantik</title> <!-- Judul halaman yang muncul di tab browser -->
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kalkulator Sederhana (NIM: 2311104037)</title>
+  <style>
+    /* Gaya dasar */
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f4f4f4;
+    }
+    /* Container kalkulator */
+    .calculator {
+      width: 260px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    /* Label/output kalkulator */
+    .screen {
+      width: 100%;
+      height: 50px;
+      font-size: 24px;
+      text-align: right;
+      padding: 10px;
+      border: none;
+      background: #eee;
+      margin-bottom: 10px;
+      border-radius: 5px;
+    }
+    /* Layout tombol: grid 3 kolom x 4 baris */
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 5px;
+    }
+    /* Gaya tombol umum */
+    .buttons button {
+      height: 50px;
+      font-size: 20px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      background: #ddd;
+      transition: background 0.2s;
+    }
+    .buttons button:hover {
+      background: #ccc;
+    }
+    /* Warna khusus tombol operator dan sama dengan */
+    .buttons button.operator {
+      background: orange;
+      color: white;
+    }
+    .buttons button.equal {
+      background: green;
+      color: white;
+    }
+  </style>
 </head>
-<body> <!-- Bagian utama dari halaman web, menampung semua konten yang terlihat -->
-    
-    <!-- Header: Bagian kepala halaman, biasanya berisi judul dan navigasi -->
-    <header>
-        <h1>Judul Website</h1> <!-- Judul utama dari website -->
-        
-        <!-- Nav: Navigasi utama website -->
-        <nav>
-            <ul> <!-- Daftar menu navigasi -->
-                <li><a href="#beranda">Beranda</a></li> <!-- Link menuju bagian Beranda -->
-                <li><a href="#tentang">Tentang</a></li> <!-- Link menuju bagian Tentang -->
-                <li><a href="#kontak">Kontak</a></li> <!-- Link menuju bagian Kontak -->
-            </ul>
-        </nav>
-    </header>
-    
-    <!-- Main: Bagian utama konten website -->
-    <main>
-        
-        <!-- Section: Kelompok konten yang memiliki tema serupa -->
-        <section id="beranda">
-            <h2>Beranda</h2> <!-- Subjudul bagian Beranda -->
-            <p>Ini adalah halaman utama dari website ini.</p> <!-- Paragraf yang menjelaskan isi bagian Beranda -->
-        </section>
+<body>
+  <div class="calculator">
+    <!-- Label output -->
+    <input type="text" class="screen" id="screen" disabled>
+    <!-- Tombol kalkulator (12 tombol) -->
+    <div class="buttons">
+      <button onclick="appendNumber('7')">7</button>
+      <button onclick="appendNumber('8')">8</button>
+      <button onclick="appendNumber('9')">9</button>
+      <button onclick="appendNumber('4')">4</button>
+      <button onclick="appendNumber('5')">5</button>
+      <button onclick="appendNumber('6')">6</button>
+      <button onclick="appendNumber('1')">1</button>
+      <button onclick="appendNumber('2')">2</button>
+      <button onclick="appendNumber('3')">3</button>
+      <button onclick="appendNumber('0')">0</button>
+      <button class="operator" onclick="appendOperator('+')">+</button>
+      <button class="equal" onclick="calculateResult()">=</button>
+    </div>
+  </div>
 
-        <section id="tentang">
-            <h2>Tentang Kami</h2> <!-- Subjudul bagian Tentang Kami -->
-            
-            <!-- Article: Konten mandiri yang bisa berdiri sendiri -->
-            <article>
-                <h3>Sejarah</h3> <!-- Subjudul artikel Sejarah -->
-                <p>Kami telah berdiri sejak tahun 2020 untuk melayani Anda.</p> <!-- Isi artikel tentang sejarah -->
-            </article>
-            <article>
-                <h3>Visi dan Misi</h3> <!-- Subjudul artikel Visi dan Misi -->
-                <p>Menjadi penyedia layanan terbaik di bidang teknologi.</p> <!-- Isi artikel tentang visi dan misi -->
-            </article>
-        </section>
-    </main>
-    
-    <!-- Aside: Konten tambahan yang terkait dengan konten utama -->
-    <aside>
-        <h2>Artikel Terkait</h2> <!-- Judul bagian artikel terkait -->
-        <ul> <!-- Daftar artikel terkait -->
-            <li><a href="#">Tips Belajar HTML</a></li> <!-- Link menuju artikel tips belajar HTML -->
-            <li><a href="#">Manfaat Penggunaan CSS</a></li> <!-- Link menuju artikel manfaat penggunaan CSS -->
-        </ul>
-    </aside>
+  <script>
+    // Mengambil elemen layar
+    const screen = document.getElementById("screen");
+    let currentInput = "";
 
-    <!-- Footer: Bagian bawah halaman, biasanya berisi informasi hak cipta atau kontak -->
-    <footer>
-        <p>&copy; 2024 Website Contoh. Semua hak dilindungi.</p> <!-- Informasi hak cipta -->
-    </footer>
+    // Fungsi untuk menambahkan angka
+    function appendNumber(num) {
+      currentInput += num;
+      screen.value = currentInput;
+    }
+
+    // Fungsi untuk menambahkan operator +
+    function appendOperator(op) {
+      // Hanya tambahkan operator jika belum ada dan input tidak kosong
+      if (currentInput !== "" && !currentInput.includes("+")) {
+        currentInput += op;
+        screen.value = currentInput;
+      }
+    }
+
+    // Fungsi menghitung hasil penjumlahan
+    function calculateResult() {
+      try {
+        // Memecah input berdasarkan tanda '+'
+        const parts = currentInput.split("+");
+        let sum = 0;
+        parts.forEach(part => {
+          sum += Number(part);
+        });
+        currentInput = sum.toString();
+        screen.value = currentInput;
+      } catch (error) {
+        screen.value = "Error";
+        currentInput = "";
+      }
+    }
+  </script>
 </body>
 </html>
