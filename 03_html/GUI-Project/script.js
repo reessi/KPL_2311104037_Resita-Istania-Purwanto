@@ -19,3 +19,4 @@ document.getElementById("submitButton").addEventListener("click", function() {
         document.getElementById("outputText").innerText = "Nama tidak boleh kosong!";
     }
 });
+
