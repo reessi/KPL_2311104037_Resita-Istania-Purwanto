@@ -1,27 +1,15 @@
-class DoorMachine {
-    constructor() {
-        this.state = "TERKUNCI";
-        console.log("Pintu terkunci");
-    }
+const { getKodePos } = require("./kodePos");
+const DoorMachine = require("./doorMachine");
 
-    unlock() {
-        if (this.state === "TERKUNCI") {
-            this.state = "TERBUKA";
-            console.log("Pintu tidak terkunci");
-        } else {
-            console.log("Pintu sudah terbuka");
-        }
-    }
+// Test Table-Driven (KodePos)
+console.log("Kode Pos Batununggal:", getKodePos("Batununggal"));
+console.log("Kode Pos Cijaura:", getKodePos("Cijaura"));
+console.log("Kode Pos Wates:", getKodePos("Wates"));
+console.log("Kode Pos Tidak Diketahui:", getKodePos("TidakAda"));
 
-    lock() {
-        if (this.state === "TERBUKA") {
-            this.state = "TERKUNCI";
-            console.log("Pintu terkunci");
-        } else {
-            console.log("Pintu sudah terkunci");
-        }
-    }
-}
-
-// Export class agar bisa dipakai di main.js
-module.exports = DoorMachine;
+// Test State-Based Construction (DoorMachine)
+const door = new DoorMachine();
+door.unlock();
+door.unlock();
+door.lock();
+door.lock();
