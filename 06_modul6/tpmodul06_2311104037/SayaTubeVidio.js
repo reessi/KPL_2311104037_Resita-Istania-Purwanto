@@ -15,13 +15,14 @@ class SayaTubeVideo {
         try {
             let newCount = this.playCount + jumlah;
             if (!Number.isSafeInteger(newCount)) {
-                throw new Error("Play count melebihi batas maksimum integer");
+                throw new Error("Overflow terjadi pada play count!");
             }
             this.playCount = newCount;
         } catch (error) {
-            console.error("Terjadi kesalahan:", error.message);
+            console.error(error.message);
         }
     }
+    
 
     printVideoDetails() {
         console.log(`ID: ${this.id}`);
@@ -30,7 +31,9 @@ class SayaTubeVideo {
     }
 }
 
-const video = new SayaTubeVideo("Tutorial Design By Contract – Resita Istania Purwanto");
-video.printVideoDetails();
-video.increasePlayCount(5000);
-video.printVideoDetails();
+const video = new SayaTubeVideo("Tutorial Design By Contract – Resita");
+
+video.increasePlayCount(5000000); // ✅ Normal
+video.increasePlayCount(20000000); // ❌ Error: Penambahan play count maksimal 10.000.000
+video.increasePlayCount(Number.MAX_SAFE_INTEGER); // ❌ Error: Overflow terjadi
+video.PrintVideoDetails();
