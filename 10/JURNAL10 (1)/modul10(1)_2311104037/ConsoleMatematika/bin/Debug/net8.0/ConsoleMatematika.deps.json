@@ -1,0 +1,39 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "ConsoleMatematika/1.0.0": {
+        "dependencies": {
+          "MatematikaLibraries": "1.0.0"
+        },
+        "runtime": {
+          "ConsoleMatematika.dll": {}
+        }
+      },
+      "MatematikaLibraries/1.0.0": {
+        "runtime": {
+          "MatematikaLibraries.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ConsoleMatematika/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MatematikaLibraries/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
