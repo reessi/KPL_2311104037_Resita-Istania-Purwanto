@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36025.13 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "modul12(2)_2311104037", "modul12(2)_2311104037.csproj", "{7D40FE51-CC25-44CC-8CC5-2E87ED73BBD2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PangkatTests", "..\PangkatTests\PangkatTests.csproj", "{5F6838ED-E93E-4B45-AE05-70DFF2BAE2D2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7D40FE51-CC25-44CC-8CC5-2E87ED73BBD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D40FE51-CC25-44CC-8CC5-2E87ED73BBD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D40FE51-CC25-44CC-8CC5-2E87ED73BBD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D40FE51-CC25-44CC-8CC5-2E87ED73BBD2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F6838ED-E93E-4B45-AE05-70DFF2BAE2D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F6838ED-E93E-4B45-AE05-70DFF2BAE2D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F6838ED-E93E-4B45-AE05-70DFF2BAE2D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F6838ED-E93E-4B45-AE05-70DFF2BAE2D2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EA6FC115-9005-45D8-903C-2AE5AAD17A1A}
+	EndGlobalSection
+EndGlobal
