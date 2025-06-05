@@ -1,0 +1,39 @@
+{
+  "members": [
+    {
+      "nim": "2311104037",
+      "firstname": "Resita",
+      "lastname": "Purwanto",
+      "age": 20,
+      "gender": "Female"
+    },
+    {
+      "nim": "2311104002",
+      "firstname": "Shilfi",
+      "lastname": "Azzahra",
+      "age": 20,
+      "gender": "Female"
+    },
+    {
+      "nim": "2311104008",
+      "firstname": "Viona",
+      "lastname": "Putri",
+      "age": 20,
+      "gender": "Female"
+    },
+    {
+      "nim": "2311104004",
+      "firstname": "Marshel",
+      "lastname": "Nathaniel",
+      "age": 20,
+      "gender": "Female"
+    },
+    {
+      "nim": "2311104030",
+      "firstname": "Isabel",
+      "lastname": "Marsha",
+      "age": 20,
+      "gender": "Female"
+    }
+  ]
+}
